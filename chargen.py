@@ -115,10 +115,10 @@ class Character:
         for career in self.char_data:
             self.career_list.append(career)
         if utility.dice(1,6) <= 3:
-            self.name = utility.random_line("data/malenames.txt") + " " + utility.random_line("data/surnames.txt")
+            self.name = utility.random_line("Data/malenames.txt") + " " + utility.random_line("Data/surnames.txt")
             self.sex = "Male"
         else:
-            self.name = utility.random_line("data/femalenames.txt") + " " + utility.random_line("data/surnames.txt")
+            self.name = utility.random_line("Data/femalenames.txt") + " " + utility.random_line("Data/surnames.txt")
             self.sex = "Female"
         self.upp = [utility.dice(2, 6), utility.dice(2, 6), utility.dice(2, 6), utility.dice(2, 6), utility.dice(2, 6), utility.dice(2, 6)]
         self.career_choice()
@@ -363,5 +363,5 @@ class Character:
     def char_stringer(self):
         self.char_string = f"{self.career} {self.rank_text} {self.name} {self.upp_string}   Age {self.age} {self.terms} terms Cr {self.cash}\n{self.species} {self.sex}\n{self.skill_string}\nInventory: {self.inventory_string}"
 
-test = Character("data/careers.json", False)
+test = Character("Data/careers.json", False)
 print (test.char_string)
